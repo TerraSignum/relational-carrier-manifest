@@ -1,0 +1,730 @@
+% P0 -- Reader's Guide to the Relational Carrier Theory Corpus
+% Companion entry-point document for Papers 1-6 and the bridge note.
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks=true]{hyperref}
+\hypersetup{
+  pdftitle={Reader's Guide to the Relational Carrier Theory Corpus (P0)},
+  pdfauthor={Sandro Bucciarelli},
+  pdfsubject={Relational carrier theory},
+}
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\_\do\/\do\.\do\-}
+\makeatother
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+
+\emergencystretch=3em
+\hbadness=4000
+\Urlmuskip=0mu plus 1mu\relax
+
+\title{Reader's Guide to the Relational Carrier Theory Corpus\\
+       \large (P0 --- canonical synthesis of Papers 1--6 and the
+       bridge note)}
+\author{Sandro Bucciarelli\thanks{Independent researcher.
+        Correspondence: \href{mailto:sandro.bucciarelli89@gmail.com}{sandro.bucciarelli89@gmail.com}.}}
+\date{\today}
+
+\newcommand{\Rsys}{\mathcal{R}}
+\newcommand{\axi}{\alpha_{\xi}}
+\newcommand{\esync}{\varepsilon_{\mathrm{sync}}^{2}}
+\newcommand{\bpi}{\beta_{\pi}}
+\newcommand{\DOmega}{D_{\Omega}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent This document is the canonical entry point to the
+relational-carrier-theory corpus. It is a synthesis, not a paper:
+every claim cites the load-bearing source paper, no new numerical
+result or proof is introduced here. The corpus consists of six
+sector papers (P1--P6) plus a bridge note; this guide states the
+theory's one-sentence thesis, identifies the three load-bearing
+claims, maps each paper to its role, registers the closure grammar
+(EXACT / PRECISE / FACTOR2; load-bearing / downstream / supporting /
+external / open), tabulates the top-tier closures, and lists the
+falsification handles that would settle the framework's main
+predictions within the next $\sim\!2$ years. The intended reader is
+either a physicist arriving at the corpus for the first time or a
+reviewer wanting the architecture before the technical layers.
+\end{abstract}
+
+\section*{What this document is and is not}
+
+\textbf{What this is.} A reader's guide. A map of where each
+question is settled in the corpus. A registry of the closure
+grammar. A pre-organised table of the load-bearing claims and
+falsification handles.
+
+\textbf{What this is not.} Not a paper. Not a derivation. Not a
+declaration of completeness. Not peer-reviewed. The relational
+carrier theory is a work-in-progress closure construction by an
+independent researcher; the empirical and conceptual claims of
+Papers 1--6 are presented as candidate closures whose external
+validation is the principal next step. \emph{No claim made here
+is novel}: every numerical value, every closure form, every
+falsification handle is sourced to the technical paper that owns
+it. If a sentence in this guide and a sentence in the cited paper
+disagree, the cited paper is authoritative.
+
+\section{One-sentence thesis and short genealogy}
+
+\paragraph{One-sentence thesis.} Physical reality is described
+as a finite relational carrier whose correlation structure
+generates the four observable channels of the bounded-operator
+readout --- two primary ($\Xi$-cohesion, $\Omega$-synchronisation)
+and two coupled ($\Xi$-$\psi$ common, sync-floor) --- from which
+the System-$\Rsys$ rational coefficient tuple
+\begin{equation*}
+(\gamma,\axi,\esync,\bpi,\DOmega)
+\;=\;(1/10,\,9/10,\,1/20,\,15/16,\,67/80)
+\end{equation*}
+is read off, and from which the emergent geometry of general
+relativity, the Standard-Model fermion-mass-and-mixing
+spectrum, dark-sector phenomenology, and the
+Bekenstein--Hawking entropy $S/A\!=\!1/4$ follow as algebraic
+consequences without additional free parameters.
+
+\paragraph{One-paragraph genealogy.} The System-$\Rsys$
+primitive set is itself fully determined by two integer inputs ---
+the relational-spacetime dimension $d\!=\!4$ and the fermion
+generation count $N_{\rm gen}\!=\!3$ --- via
+$\gamma\!=\!1/(2(d{+}1)),\;
+\axi\!=\!(2d{+}1)/(2(d{+}1)),\;
+\esync\!=\!1/(4(d{+}1)),\;
+\bpi\!=\!15/16,\;
+\DOmega\!=\!1\!-\!(N_{\rm gen}d{+}1)/(d^{2}(d{+}1))$. Both $d$
+and $N_{\rm gen}$ are observationally fixed integer counts of
+discrete-geometric features of the underlying relational
+lattice, not free parameters. The free-parameter count of the
+structural input is therefore zero. The five System-$\Rsys$
+rationals are the algebraic backbone of all downstream
+closures.
+
+\paragraph{Derived primitive identities.}
+Several closed-form identities among the primitives recur
+across the corpus and are used repeatedly in the downstream
+closures. For convenience of cross-paper reading they are
+registered here:
+\begin{itemize}
+\item $\axi + \gamma = 1$ (chirality complementarity; P2
+\S~5);
+\item $\esync = \gamma/2$ (fluctuation--dissipation symmetry;
+P2 \S~5);
+\item $s_{\rm face} = 1/d = 1/4$ (Bekenstein--Hawking entropy
+face, equivalently the inverse-dimension prefactor; P3 L7);
+\item $d + N_{\rm gen} = 7$ (mass-mode dimensional primitive;
+recurs in $L4\!=\!-(d{+}N_{\rm gen})^{2}/(d(d{+}1))\!=\!-49/20$,
+$n_{s}\!=\!1-\gamma^{2}(d{+}N_{\rm gen})/2\!=\!193/200$, and
+$Y_{p}\!=\!(d{+}N_{\rm gen})^{2}\gamma^{2}/2\!=\!49/200$);
+\item $2(d{+}1) = 10 = \gamma^{-1}$ (back-channel inverse;
+the leading integer in the Coleman--Gamow action
+$S_{\rm Gamow}\!=\!2(d{+}1)N_{\rm gen}-(2d{+}N_{\rm gen})\!=\!19$);
+\item $2d + N_{\rm gen} = 11$ (CKM dimensional primitive;
+$V_{cb}\!=\!\axi/(2(2d{+}N_{\rm gen}))\!=\!9/220$);
+\item $(d{+}1)/d = 5/4$ (gravitational-backreaction
+screening amplitude; cosmological-constant Schwinger--Dyson
+layer);
+\item $N_{\rm gen}\cdot d = 12$ (occupancy-sector
+dimensional product; pairs-per-cell on the canonical
+ladder).
+\end{itemize}
+Each identity is a closed-form consequence of the integer
+inputs $(d, N_{\rm gen})$; they are not independent free
+parameters.
+
+\section{Three load-bearing claims}
+\label{sec:pillars}
+
+The technical-foundations paper P6~\cite{Paper6} states the
+load-bearing classification explicitly in its
+``three claims are load-bearing'' paragraph: the
+construction stands on
+\begin{enumerate}
+\item the \emph{bounded carrier with finite-$N$
+Einstein-residual closure} of P4~\cite{Paper4} (emergent
+gravity, lattice $\Lambda_{\rm lat}\!=\!19/15$ identity, four-point
+Continuum Backreaction Identity);
+\item the \emph{System-$\Rsys$ coefficient readout via the
+bounded-operator construction} of P2~\cite{Paper2} (ten causal-wave
+landings, formula-search audit, the four-projector spectral
+uniqueness theorem);
+\item the \emph{topology-labeled loop-class library mapping}
+of P3~\cite{Paper3} (loop-class protocol, Yukawa-cluster
+PROSP-01/04, Bekenstein--Hawking $S/A\!=\!1/4$).
+\end{enumerate}
+All other cross-sector closures ---
+$\alpha_{\rm EM}$, $v_{\rm EW}$, $S_{\rm BH}/A\!=\!1/4$,
+$n_{s}$, $A_{s}$, halo phenomenology, dark sector --- are
+\emph{downstream} of the three load-bearing claims in the sense
+defined in Section~\ref{sec:grammar}.
+
+\section{Two branches: vacuum and matter-side chirality flip}
+\label{sec:branches}
+
+The bridge note~\cite{BridgeNote} formulates the corpus-wide
+two-branch structure as a single \emph{loop-topological carrier}
+operating in two distinct relational regimes:
+
+\paragraph{Vacuum branch.} Pre-chirality-flip configuration
+($\theta_{\rm chir}\!=\!0$, canonical
+$(\axi,\gamma)\!=\!(9/10,1/10)$). Governs the electroweak-scale
+closure ($v_{\rm EW}\!=\!246.22$~GeV via P1~\cite{Paper1}'s
+four-path consensus), the inflation-era and recombination-era
+observables ($n_{s}, A_{s}, z_{*}, \theta_{*}$), and the
+late-time dark-energy equation of state at leading order
+($w_{\rm DE}\!=\!-39/40$).
+
+\paragraph{Matter-side chirality-flip branch.} Post-$\pi/4$
+matter-side branch with asymptotic/inverted anchor
+$(\axi,\gamma)\!=\!(1/10,9/10)$: the chirality-flip boundary
+itself sits at $\theta_{\rm chir}\!=\!\pi/4$ (where the two
+coefficients cross), and the asymptotic post-flip anchor is
+the inverted tuple $(1/10,9/10)$ approached as
+$\theta_{\rm chir}$ continues past $\pi/4$. This branch governs
+the matter-core phenomenology (top-$5\%$ K/Q closure), the
+chirality-running $w_{\rm DE}(\theta_{\rm chir})$ at
+next-to-leading order (P4B~\cite{Paper4B}), and the absolute
+neutrino-mass identification $m_{1}\!=\!\gamma^{2}m_{3}$ via
+the loop-class companion's Pure-Self-Energy resummation
+(P3~\cite{Paper3}).
+
+The two-branch decomposition is itself System-$\Rsys$-derived
+rather than ad hoc: the chirality angle $\theta_{\rm chir}(N)$
+runs algebraically with lattice resolution $N$~\cite{Paper4}
+(the running formula is the one labelled
+\emph{theta-running-first-principles} in P4), crossing
+$\pi/4$ at a specific lattice resolution at which the
+back-channel-projection numerical hierarchy inverts.
+
+\section{Corpus map: which paper does what}
+\label{sec:corpus-map}
+
+\begin{table}[!htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{0.13\textwidth} p{0.36\textwidth} p{0.42\textwidth}}
+\toprule
+Paper & Title (short) & Role in the corpus \\
+\midrule
+P0 (this doc.) & Reader's guide & Entry-point, claim grammar,
+                                  corpus map, falsifiers \\
+P1~\cite{Paper1} & Hierarchy-bridge electroweak-scale closure
+                                & $v_{\rm EW}\!=\!246.22$~GeV
+                                  four-path consensus,
+                                  $|g|_{\rm MS}\!=\!1.42$,
+                                  HBR + $\theta_{em}\!=\!\pi$
+                                  load-bearing input to P4 \\
+P2~\cite{Paper2} & Causal-wave landings + System-$\Rsys$ readout
+                                & \textbf{Pillar (ii)}:
+                                  bounded-operator construction;
+                                  ten landings; four-projector
+                                  spectral-uniqueness theorem;
+                                  formula-search audit
+                                  47/$\sim\!174$k \\
+P3~\cite{Paper3} & Loop-class library + closure protocol
+                                & \textbf{Pillar (iii)}: loop-class
+                                  topology-labelled mapping;
+                                  Bekenstein--Hawking
+                                  $S/A\!=\!1/4$; SYE
+                                  Yukawa/CKM/PMNS pipeline;
+                                  PROSP-01/04 prospective registry \\
+P4~\cite{Paper4} & Emergent-gravity bulk Einstein closure
+                                & \textbf{Pillar (i)}: bounded
+                                  carrier; $\Lambda_{\rm lat}^{\infty}\!=\!19/15$;
+                                  Continuum Backreaction Identity;
+                                  closure-domain ladder $N\!\in\![50,512]$ \\
+P4A~\cite{Paper4A} & Schwarzschild + PPN companion
+                                & Companion test:
+                                  weak-field PPN parameters;
+                                  $\bar\theta_{\rm QCD}$ vanishing \\
+P4B~\cite{Paper4B} & Anisotropic source $\to$ DM/DE companion
+                                & Companion: $T_{\mu\nu}^{\Xi}$
+                                  decomposition; $w_{\rm DE}\!=\!-39/40$;
+                                  chirality-running $w(z)$; 9-layer
+                                  cosmological-constant dressing \\
+P4C~\cite{Paper4C} & H3c witnesses companion
+                                & Companion diagnostics for the
+                                  Einstein-residual closure \\
+P4D~\cite{Paper4D} & Atiyah--Singer chirality index companion
+                                & Companion: integer-quantised
+                                  vortex-DM winding number;
+                                  topological-DM identification \\
+Bridge note (appendix)~\cite{BridgeNote}
+                  & P1$\leftrightarrow$P4 cross-file consistency
+                                & Lemma-level: common
+                                  loop-topological carrier;
+                                  version-lock matrix;
+                                  cross-paper $\Rsys$-tuple
+                                  consistency \\
+P6~\cite{Paper6} & Relational-UV-closure technical foundations
+                                & Master technical document:
+                                  $H_{UV}$, $S_{UV}$, $Z_{UV}$,
+                                  branch construction, closure
+                                  ledger, load-bearing-vs-downstream
+                                  registry \\
+\bottomrule
+\end{tabular}
+\caption{Corpus map. P0 (this document) is the reader's guide
+and entry point; P2, P3, P4 are the three load-bearing claims
+of Section~\ref{sec:pillars}; P1, P4A--D, and P6 supply
+supporting structure or technical foundations; the bridge
+note is a cross-file consistency appendix.}
+\label{tab:corpus-map}
+\end{table}
+
+\section{Claim grammar}
+\label{sec:grammar}
+
+The corpus uses a registered vocabulary of closure tiers and
+claim classes. Each is defined formally in one of the technical
+papers; the present section is a routing table only.
+
+\paragraph{Closure tiers (precision against external anchor).}
+\begin{itemize}
+\item \textbf{EXACT}: relative residual at or below the
+paper-specific EXACT cut, corresponding to a System-$\Rsys$
+identity that closes at machine precision under the rational
+reduction $\Rsys$ (see P6 §1 definition).
+\item \textbf{PRECISE}: relative residual $\le 2.5\%$; closes
+the framework prediction within standard-fit experimental
+uncertainty.
+\item \textbf{FACTOR2}: closure form correct but numerical value
+within a factor of 2; reported as a structural-form
+identification, not a precision claim.
+\item \textbf{STRUCTURAL\_CLOSED}: closure form derived
+algebraically; numerical match secondary
+(e.g.\ $\Sigma_{f}Y_{f}^{2}\!=\!10$).
+\end{itemize}
+
+\paragraph{Paper-specific EXACT cuts.} The corpus uses
+three EXACT cuts depending on the observable class. The
+present routing table makes them explicit so a reader
+cross-comparing two papers does not confuse a stricter
+EXACT-label in one paper with a looser one in another. A
+claim that is EXACT under a stricter cut is automatically
+EXACT under any looser cut (the implication runs from
+left to right).
+\begin{center}
+\begin{tabular}{@{}p{0.27\textwidth} p{0.13\textwidth} p{0.48\textwidth}@{}}
+\toprule
+Paper / observable class & EXACT cut & Rationale \\
+\midrule
+P2 (causal-wave landings) & $|r| \le 0.01\%$ & EXACT-target
+algebraic landings; sub-experimental-uncertainty closure \\
+P3 (loop-class library) & $|r| < 0.4\%$ & loop-corrected
+observables compared against PDG/NuFIT measurement bands \\
+P0 / P4 / P4A--D / P6 / bridge & $|r| \le 1\%$ & global
+manifest band covering all observable classes; superset of
+P2 and P3 cuts \\
+\bottomrule
+\end{tabular}
+\end{center}
+The PRECISE cut is uniform across the corpus
+($|r| \le 2.5\%$) and the FACTOR2 cut is uniform
+($|r| \le 100\%$, i.e.\ within a factor of two).
+A claim that closes at $|r| \le 0.01\%$ is EXACT under any
+of the three cuts; a claim at $|r| \in (0.01\%, 0.4\%]$ is
+EXACT under P3, P0 and the global manifest but downgrades to
+PRECISE under P2; a claim at $|r| \in (0.4\%, 1\%]$ is EXACT
+under P0 and the global manifest but PRECISE under P3.
+
+\paragraph{Claim classes (load-bearing classification).}
+The unified manifest (file
+\path|data/corpus_claims_manifest.json| in P6's
+repository~\cite{Paper6}) registers every main claim under
+one of five labels:
+\begin{itemize}
+\item \textbf{Load-bearing.} The construction stands on this
+claim. Three exist: pillars (i)--(iii) of
+Section~\ref{sec:pillars}.
+\item \textbf{Downstream.} An algebraic or audit consequence
+of the same System-$\Rsys$ tuple read off by the load-bearing
+claims (e.g.\ $\alpha_{\rm EM}\!=\!\gamma^{2}\axi^{N_{\rm gen}}$,
+$\sigma_{8}\!=\!\axi^{2}$,
+$n_{s}\!=\!1\!-\!7\gamma^{2}/2$). The vast majority of the
+closures of Table~\ref{tab:top-closures} fall here.
+\item \textbf{Supporting witness.} An independent audit
+diagnostic that does not extend the closure surface but
+confirms it (e.g.\ P4C's H3c gravitational-coupling-scaling
+diagnostics).
+\item \textbf{External contact.} A point of contact with the
+existing literature (Pauli--Zeldovich cancellation,
+Schwinger--Dyson resummation, Reed--Simon VIII.5).
+\item \textbf{Open target.} A registered observable whose
+closure is not yet established within the corpus and which is
+flagged as the framework's primary near-term theoretical
+target.
+\end{itemize}
+
+\section{Main closures at a glance}
+\label{sec:top-closures}
+
+The list below is a curated subset of the $\sim\!50$ registered
+closures of the corpus, selected for highest external-anchor
+visibility. Each entry is owned by the cited paper; this table
+re-states them in one place.
+
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{longtable}{@{}p{0.17\textwidth} p{0.25\textwidth} p{0.18\textwidth} p{0.16\textwidth} p{0.07\textwidth}@{}}
+\caption{Top-tier corpus closures, one row per observable.
+``Tier'' is the precision class against the external anchor
+(EXACT $\le 1\%$, PRECISE $\le 2.5\%$, FACTOR2 within $2\times$).
+``Class'' is the load-bearing classification of
+Section~\ref{sec:grammar}. Rows marked \emph{load-bearing} are
+components of the three load-bearing blocks
+(pillars~(i)--(iii) of Section~\ref{sec:pillars}), not
+additional independent pillars; the corpus has \emph{exactly
+three} load-bearing pillars and the multiplicity of
+load-bearing rows in the table reflects the multiple
+observables that each pillar supplies.}
+\label{tab:top-closures}\\
+\toprule
+Observable & System-$\Rsys$ form & Tier & Class & Owner \\
+\midrule
+\endfirsthead
+
+\toprule
+Observable & System-$\Rsys$ form & Tier & Class & Owner \\
+\midrule
+\endhead
+
+\multicolumn{5}{c}{\textit{Cosmology}} \\
+$H_{0}$ & $100\,\axi\,s_{\rm face}\,N_{\rm gen}\!=\!67.5$ km/s/Mpc & EXACT & downstream & P4B \\
+$\sigma_{8}$ & $\axi^{2}\!=\!81/100$ & PRECISE & downstream & P4B \\
+$S_{8}$ & $\axi^{2}\sqrt{\Omega_{m}/0.3}\!=\!0.828$ & EXACT & downstream & P4B \\
+$\Omega_{m}$ & $47/150$ & PRECISE & downstream & P4B \\
+$\Omega_{\Lambda}$ & $103/150$ & PRECISE & downstream & P4B \\
+$\Omega_{\rm DM}h^{2}$ & $243/2000\!=\!0.1215$ & PRECISE & downstream & P4B \\
+$w_{\rm DE}$ & $-1+\varepsilon_{\rm sync}^{4}/\gamma\!=\!-39/40$ & PRECISE & downstream & P4B \\
+$n_{s}$ & $1-7\gamma^{2}/2$ & EXACT & downstream & P4B \\
+$A_{s}$ & $21\gamma^{10}$ & EXACT & downstream & P4B \\
+$z_{*}$ & $(2d{+}1)(2d{+}N_{\rm gen})^{2}\!+\!{\rm sub}$ & EXACT & downstream & P4B \\
+$Y_{p}$ & $49\gamma^{2}/2$ & EXACT & downstream & P4B \\
+$\Sigma m_{\nu}$ & $\gamma^{2}m_{3}\!+\!m_{2}\!+\!m_{3}\!\simeq\!0.060$ eV & PRECISE & downstream & P6 \\
+\midrule
+\multicolumn{5}{c}{\textit{Electroweak \& Standard Model}} \\
+$v_{\rm EW}$ & 4-path consensus $246.22$ GeV & PRECISE & load-bearing input & P1 \\
+$\alpha_{\rm EM}$ & $\gamma^{2}\axi^{N_{\rm gen}}\!=\!729/10^{5}$ & EXACT & downstream & P3 \\
+$\sin^{2}\theta_{W}$ & $1/d - \gamma/(2N_{\rm gen})\!=\!7/30$ & PRECISE & downstream & P3 \\
+$V_{us}$ & $\axi\,s_{\rm face}\!=\!9/40$ & EXACT & downstream & P3 \\
+$m_{t}$ & spectral Yukawa eigenvalue $\to 174.1$ GeV & EXACT & downstream & P3 \\
+$m_{\mu}/m_{e}$ & spectral Yukawa chirality split $\to 206.0$ & EXACT & downstream & P3 \\
+$a_{\mu}^{\rm Schwinger}$ & $\alpha_{\rm EM}/(2\pi)$ & PRECISE & downstream & P3 \\
+\midrule
+\multicolumn{5}{c}{\textit{Gravity \& black-hole sector}} \\
+$\Lambda_{\rm lat}^{\infty}$ & $3\axi/2+\esync-\gamma(N_{\rm gen}{+}1)/N_{\rm gen}\!=\!19/15$ & EXACT & load-bearing & P4 \\
+$\Lambda_{t}^{\infty}$ & $\axi^{2}\!=\!81/100$ & EXACT & load-bearing & P4 \\
+$\Lambda_{s}^{\infty}$ & $-\gamma^{2}/2\!=\!-1/200$ & EXACT & load-bearing & P4 \\
+$S_{\rm BH}/A$ & $s_{\rm face}\!=\!1/d\!=\!1/4$ & EXACT & load-bearing & P3 \\
+PPN $\gamma_{\rm PPN}$ & induced from Einstein closure & PRECISE & downstream & P4A \\
+$\rho_{\Lambda}^{\rm pred}/\rho_{\Lambda}^{\rm obs}$ & 9-layer dressing $\to 1.001$ & EXACT & downstream & P4B \\
+\midrule
+\multicolumn{5}{c}{\textit{Dark sector \& halo phenomenology}} \\
+$g_{\dagger}$ (RAR) & $cH_{0}/(2\pi\axi)$ & PRECISE & downstream & P4B \\
+BTFR $A$ & $\sim\!(G_{N}H_{0})^{-1}$ & PRECISE & downstream & P4B \\
+NFW vs Burkert branching & polarity-violation rate & STRUCTURAL & downstream & P4B \\
+SPARC pass-fraction & $79/129$ within domain $\mathcal{D}_{\rm halo}$ & PRECISE & downstream & P4B \\
+Vortex-DM $w_{\rm DM}$ & $0$ (integer-quantised winding) & STRUCTURAL & downstream & P4D \\
+\midrule
+\multicolumn{5}{c}{\textit{Foundations}} \\
+4-projector basis & Reed--Simon VIII.5 spectral-uniqueness & EXACT & load-bearing & P2 \\
+10 causal-wave landings & 47 forms / $\sim\!174$k searched & EXACT & load-bearing & P2 \\
+Loop-class library & topology-labelled protocol & STRUCTURAL & load-bearing & P3 \\
+$\sum_{f}Y_{f}^{2}\!=\!10$ & three-generation chiral content & EXACT & downstream & P6 \\
+$\bar\theta_{\rm QCD}\!=\!0$ & APS-chirality pairing & STRUCTURAL & downstream & P4A \\
+\bottomrule
+\end{longtable}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.0}
+
+\section{Falsification handles}
+\label{sec:falsifiers}
+
+The framework registers explicit falsification triggers
+against current and near-term cosmological and laboratory
+data. Closure of these handles within the next $\sim\!2$ years
+is the principal external test of the framework.
+
+\paragraph{Cross-reference to owning-paper falsifier IDs.}
+The six corpus-wide falsifiers below map to the
+owning-paper local falsifier labels as registered in each
+companion paper's \texttt{Falsification triggers} section.
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.40\textwidth} p{0.28\textwidth} p{0.22\textwidth}@{}}
+\toprule
+P0 falsifier (this section) & Owning paper & Local label \\
+\midrule
+1. $\Sigma m_{\nu}$ vs DESI / CMB-S4 / Roman / Euclid
+   & P3, P6        & P3 FAL-$\Sigma m_{\nu}$, P6 §FAL-cosmo \\
+2. Dynamical $w(z)$ vs DESI BAO running
+   & P4B           & P4B FAL-$w_{a}$ \\
+3. Hubble tension on non-Cepheid distance ladders
+   & P4B           & P4B FAL-$H_{0}$ \\
+4. Tensor-to-scalar ratio $r$ vs CMB-S4
+   & P4B           & P4B FAL-$r$ \\
+5. Particle-DM direct detection (LZ / XENON-nT / PandaX / DarkSide)
+   & P4D           & P4D F1, F2, F3 \\
+6. Halo regime signatures (microlensing, EDGES 21-cm)
+   & P4, P4B       & P4B FAL-halo \\
+\bottomrule
+\end{tabular}
+\end{center}
+A reader following one of these falsifiers across to its
+owning paper finds the same numerical thresholds at higher
+technical detail and the reproducer pointers.
+
+\paragraph{Cosmological-data-decidable within $\sim\!2$ years.}
+\begin{enumerate}
+\item \emph{$\Sigma m_{\nu}$ vs DESI / CMB-S4 / Roman / Euclid.}
+The framework predicts $\Sigma m_{\nu}\!\simeq\!0.060$~eV via
+$m_{1}\!=\!\gamma^{2}m_{3}$~\cite{Paper3,Paper6}. The current
+DESI DR2 BAO + DR1 full-shape bound is
+$\Sigma m_{\nu}\!<\!0.0642$~eV~\cite{DESI2025}; the framework
+prediction sits $6.1\%$ below this. A confirmed tightening
+below the NH oscillation minimum $\simeq\!0.0586$~eV would
+falsify the $\gamma^{2}m_{3}$ identification.
+\item \emph{Dynamical $w(z)$ vs DESI BAO running.} The framework
+predicts $|w_{a}|\!\lesssim\!\gamma^{2}\!=\!0.01$
+from the chirality-running structure
+$w_{\rm DE}(\theta_{\rm chir})$~\cite{Paper4B}. The DESI 2024+2025
+central $w_{a}\!\approx\!-0.4$ at $\sim\!3\sigma$ lies
+$\sim\!40\!\times$ outside the framework band; consolidation
+to $>\!5\sigma$ in DESI-DR3 would falsify the
+$\varepsilon_{\rm sync}^{4}/\gamma$ closure.
+\item \emph{Hubble tension on non-Cepheid distance ladders.}
+The framework predicts $H_{0}\!=\!67.5$~km/s/Mpc independent
+of distance-ladder method~\cite{Paper4B}. Confirmed
+$H_{0}\!\in\![72,74]$~km/s/Mpc on a non-Cepheid local ladder
+(gravitational-wave sirens, TDCOSMO, JWST-anchored TRGB at
+$\sigma_{H_{0}}\!\lesssim\!1$ km/s/Mpc) would falsify the
+distance-ladder-systematic attribution of the SH0ES
+$73.04\!\pm\!1.04$ discrepancy.
+\item \emph{Tensor-to-scalar ratio $r$ vs CMB-S4.} The
+framework predicts $r\!\sim\!\gamma^{3}(d{+}N_{\rm gen})\!\simeq\!7\!\times\!10^{-3}$
+within the BICEP/Keck BK18 upper bound
+$r_{0.05}\!<\!0.036$~\cite{BICEPKeck2021}. CMB-S4 sensitivity
+$\sigma(r)\!\sim\!10^{-3}$ within $\sim\!3$ years will provide
+a definitive detection or upper-bound test.
+\end{enumerate}
+
+\paragraph{Laboratory-data-decidable.}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item \emph{Particle-DM direct detection.} The framework
+identifies dark matter with a relational vortex-defect network
+of integer-quantised $U(1)$
+winding~\cite{Paper4D}; this is topological, not particulate. The
+framework therefore predicts \emph{null} results on LZ
+($\sigma_{\rm SI}\!<\!2.2\!\times\!10^{-48}$\,cm$^{2}$ at
+$40$ GeV/c$^{2}$~\cite{LZ2024}), XENON-nT~\cite{XENONnT2023},
+PandaX-4T~\cite{PandaX2024}, and DarkSide~\cite{DarkSide2023}
+down to the neutrino floor. A positive nuclear-recoil signal
+at any future facility would falsify the topological-DM
+identification.
+\item \emph{Halo regime signatures.} Microlensing of
+vortex-network clumps at the chirality-flip mass scale
+$M_{\rm flip}$~\cite{Paper4} should show a discrete
+event-frequency distribution rather than a continuous PBH
+spectrum; 21-cm absorption-depth deviations from $\Lambda$CDM
+in the EDGES band correlate with the vortex-density power
+spectrum at $z\!\sim\!17$.
+\end{enumerate}
+
+\paragraph{Pre-registered prospective targets.}
+The loop-class companion paper P3~\cite{Paper3} registers a
+prospective cluster registry --- the file
+\path|prospective_cluster_registry.json|
+in the loop-class repo --- that pre-registers three
+loop-class observables for future $\Rsys$-falsification
+opportunities at the P3 protocol level.
+
+\section{Where to read next}
+\label{sec:routing}
+
+The natural reading order depends on the reader's question:
+
+\paragraph{``What is the theory?''.} Read this guide (P0)
+first. Then read P6~\cite{Paper6} for the technical
+foundations, P2~\cite{Paper2} for the System-$\Rsys$ readout,
+P3~\cite{Paper3} for the loop-class protocol, and
+P4~\cite{Paper4} for the main emergent-GR claim. The bridge
+note~\cite{BridgeNote} is best read afterward as a
+cross-file consistency appendix.
+
+\paragraph{``Where do the System-$\Rsys$ coefficients come
+from?''.} P2~\cite{Paper2} (causal-wave landings + formula-search
+audit + spectral-uniqueness theorem).
+
+\paragraph{``How does general relativity emerge?''.}
+P4~\cite{Paper4} (bounded carrier + Einstein-residual closure +
+Continuum Backreaction Identity); then P4A~\cite{Paper4A} for
+the weak-field PPN companion.
+
+\paragraph{``How do the Standard-Model masses and mixings
+close?''.} P3~\cite{Paper3} (loop-class library + SYE
+Yukawa-pipeline + $\alpha_{\rm EM}$-mediated identities).
+
+\paragraph{``How do dark matter and dark energy fit in?''.}
+P4B~\cite{Paper4B} (anisotropic source decomposition,
+$w_{\rm DE}$, cosmological-constant dressing) and
+P4D~\cite{Paper4D} (vortex-DM topological identification).
+
+\paragraph{``What is the electroweak-scale closure?''.}
+P1~\cite{Paper1} (HBR + $\theta_{em}\!=\!\pi$ four-path
+consensus for $v_{\rm EW}$).
+
+\paragraph{``Is the corpus internally consistent?''.} The
+bridge note~\cite{BridgeNote} (technical-consistency proof
+P1$\leftrightarrow$P4) and the unified manifest file
+\path|relational-uv-closure-repro/data/corpus_claims_manifest.json|
+of P6~\cite{Paper6}.
+
+\section*{Closing note}
+
+The relational carrier theory is presented as a candidate
+closure construction whose external validation is the principal
+next step. The corpus does not claim to be a final accepted
+theory of nature; it claims that the load-bearing pillars
+(i)--(iii) of Section~\ref{sec:pillars} are internally
+consistent, that the downstream closures of
+Table~\ref{tab:top-closures} follow algebraically from the
+load-bearing pillars within the System-$\Rsys$ rational
+reduction, and that the falsification handles of
+Section~\ref{sec:falsifiers} provide a decidable near-term
+test surface. Each individual claim is owned by the cited
+paper; the present guide is an entry point and a map, nothing
+more.
+
+\section*{Data and software availability}
+\label{sec:data-availability}
+The reproducibility package
+(\url{https://github.com/[anonymized]/relational-carrier-manifest}) bundles all
+input data files (under \path|data/|), reproducer scripts
+(\path|src/verify_*.py| and \path|src/make_figures.py|), and
+unit tests (\path|tests/|). Cryptographic provenance is provided by
+\path|data/SHA256SUMS| (GNU \texttt{sha256sum -c} compatible),
+and the publication-prep frozen state is documented in
+\path|RELEASE_v1_0_0.md| with full release notes in
+\path|CHANGELOG.md|. Software metadata is in \path|pyproject.toml|
+and \path|CITATION.cff| (Citation File Format 1.2). The package is
+licensed under MIT; the manuscript text is licensed under
+CC-BY-4.0.
+
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99}
+
+\bibitem{Paper1}
+Bucciarelli, S.,
+\emph{A defect-field two-loop correction to the
+Hierarchy-Bridge-Relation electroweak scale}
+(\path|hbr-ew-scale-repro|, 2026).
+
+\bibitem{Paper2}
+Bucciarelli, S.,
+\emph{A five-coefficient causal-wave ansatz and ten cross-sector
+benchmark closures}
+(\path|causal-wave-landings-repro|, 2026).
+
+\bibitem{Paper3}
+Bucciarelli, S.,
+\emph{Topology-labeled loop-class mappings for cross-sector
+physical observables}
+(\path|loop-class-closure-repro|, 2026).
+
+\bibitem{Paper4}
+Bucciarelli, S.,
+\emph{Emergent Einstein dynamics from relational metric closure
+on finite correlation lattices}
+(\path|emergent-gr-closure-repro|, 2026).
+
+\bibitem{Paper4A}
+Bucciarelli, S.,
+\emph{Schwarzschild defect, post-Newtonian limits, and the
+black-hole sector from a relational emergent-metric
+construction}
+(\path|emergent-gr-schwarzschild-ppn-repro|, 2026).
+
+\bibitem{Paper4B}
+Bucciarelli, S.,
+\emph{Anisotropic source tensor and the dark-matter /
+dark-energy mixture decomposition on a relational lattice}
+(\path|emergent-gr-anisotropic-source-dm-de-repro|, 2026).
+
+\bibitem{Paper4C}
+Bucciarelli, S.,
+\emph{Multi-observable indirect-witness chain bounding the
+Einstein-identity gap on a relational emergent-gravity lattice}
+(\path|emergent-gr-h3c-witnesses-repro|, 2026).
+
+\bibitem{Paper4D}
+Bucciarelli, S.,
+\emph{A discrete Atiyah--Singer-type bridge from the
+chirality-balance witness to the Einstein-identity gap on the
+relational $\Xi$-graph}
+(\path|emergent-gr-atiyah-singer-chirality-repro|, 2026).
+
+\bibitem{Paper6}
+Bucciarelli, S.,
+\emph{Full UV-closure construction of the relational
+QFT--Einstein carrier: a two-phase loop-topological framework
+with vacuum and matter branches}
+(\path|relational-uv-closure-repro|, 2026).
+
+\bibitem{BridgeNote}
+Bucciarelli, S.,
+\emph{A common loop-topological carrier for electroweak and
+emergent-gravity sectors (Technical consistency note across
+Papers~1--4)}
+(\path|qft-einstein-bridge-repro|, 2026).
+
+\bibitem{DESI2025}
+W.~Elbers \textit{et al.} (DESI Collaboration),
+\emph{Constraints on neutrino physics from DESI DR2 BAO and DR1
+full shape},
+Physical Review D \textbf{112}, 083513 (2025); arXiv:2503.14744.
+
+\bibitem{BICEPKeck2021}
+P.~A.~R.~Ade \textit{et al.} (BICEP/Keck Collaboration),
+\emph{Improved constraints on primordial gravitational waves
+using Planck, WMAP, and BICEP/Keck observations through the
+2018 observing season} (BK18),
+Physical Review Letters \textbf{127}, 151301 (2021); arXiv:2110.00483.
+
+\bibitem{LZ2024}
+J.~Aalbers \textit{et al.} (LUX-ZEPLIN Collaboration),
+\emph{Dark matter search results from 4.2 tonne-years of exposure
+of the LUX-ZEPLIN (LZ) experiment},
+Physical Review Letters \textbf{135}, 011802 (2025); arXiv:2410.17036.
+
+\bibitem{XENONnT2023}
+E.~Aprile \textit{et al.} (XENON Collaboration),
+\emph{First dark matter search with nuclear recoils from the
+XENONnT experiment},
+Physical Review Letters \textbf{131}, 041003 (2023); arXiv:2303.14729.
+
+\bibitem{PandaX2024}
+Z.~Bo \textit{et al.} (PandaX Collaboration),
+\emph{Dark matter search results from 1.54 tonne$\cdot$year exposure
+of PandaX-4T},
+Physical Review Letters \textbf{134}, 011805 (2025); arXiv:2408.00664.
+
+\bibitem{DarkSide2023}
+P.~Agnes \textit{et al.} (DarkSide-50 Collaboration),
+\emph{Search for low-mass dark matter WIMPs with 12 ton-day exposure
+of DarkSide-50},
+Physical Review D \textbf{107}, 063001 (2023); arXiv:2207.11966.
+
+\end{thebibliography}
+
+\end{document}

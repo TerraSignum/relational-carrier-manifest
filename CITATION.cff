@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "Reader's Guide to the Relational Carrier Theory Corpus (P0)"
+message: "If you use this manifest, please cite it using the metadata below."
+authors:
+  - family-names: Bucciarelli
+    given-names: Sandro
+version: 1.0.0
+date-released: 2026-05-12
+license: MIT
+repository-code: "https://github.com/[anonymized]/relational-carrier-manifest"
+abstract: >-
+  P0 reader's-guide manifest for the relational-carrier-theory corpus
+  (papers P1-P6 plus the bridge note). One-sentence thesis, three
+  load-bearing claims, two-branch decomposition (vacuum / matter-flip),
+  closure-tier vocabulary (EXACT / PRECISE / FACTOR2; load-bearing /
+  downstream / supporting / external / open), top-tier closures table
+  (~35 rows), six falsification handles decidable within 2 years
+  (DESI DR3, CMB-S4, JWST), and reading routing. This guide makes no
+  new numerical claims; every numerical value, closure form, and
+  falsification handle is sourced to the technical paper that owns it.
+keywords:
+  - relational-carrier-theory
+  - reader-guide
+  - corpus-manifest
+  - claim-grammar
+  - falsification-handles
+  - particle-physics
+  - cosmology
+references:
+  - type: article
+    title: "Reader's Guide to the Relational Carrier Theory Corpus (P0)"
+    authors:
+      - family-names: Bucciarelli
+        given-names: Sandro
+    year: 2026
+    notes: "Accompanying document; see paper/manifest.pdf in this repository."

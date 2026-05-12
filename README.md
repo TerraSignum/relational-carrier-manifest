@@ -1,6 +1,6 @@
 # P0 — Reader's Guide to the Relational Carrier Theory Corpus
 
-[![CI: reproduce](https://github.com/[anonymized]/relational-carrier-manifest/actions/workflows/reproduce.yml/badge.svg)](https://github.com/[anonymized]/relational-carrier-manifest/actions/workflows/reproduce.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI: reproduce](https://github.com/TerraSignum/relational-carrier-manifest/actions/workflows/reproduce.yml/badge.svg)](https://github.com/TerraSignum/relational-carrier-manifest/actions/workflows/reproduce.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 This is the canonical entry-point document for the

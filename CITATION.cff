@@ -7,7 +7,7 @@ authors:
 version: 1.0.0
 date-released: 2026-05-12
 license: MIT
-repository-code: "https://github.com/[anonymized]/relational-carrier-manifest"
+repository-code: "https://github.com/TerraSignum/relational-carrier-manifest"
 abstract: >-
   P0 reader's-guide manifest for the relational-carrier-theory corpus
   (papers P1-P6 plus the bridge note). One-sentence thesis, three

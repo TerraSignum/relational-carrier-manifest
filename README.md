@@ -1,6 +1,11 @@
 # P0 — Reader's Guide to the Relational Carrier Theory Corpus
 
-[![CI: reproduce](https://github.com/TerraSignum/relational-carrier-manifest/actions/workflows/reproduce.yml/badge.svg)](https://github.com/TerraSignum/relational-carrier-manifest/actions/workflows/reproduce.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+*(P0 is a documentation-only synthesis with no executable test
+suite or reproducibility-CI workflow, so no `reproduce.yml` badge
+is shown here. The 10 sector / bridge repos each carry their own
+reproduce.yml CI workflow with the corresponding badge.)*
 
 
 This is the canonical entry-point document for the

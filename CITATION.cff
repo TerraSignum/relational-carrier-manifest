@@ -4,6 +4,7 @@ message: "If you use this manifest, please cite it using the metadata below."
 authors:
   - family-names: Bucciarelli
     given-names: Sandro
+    email: sandro.bucciarelli89@gmail.com
 version: 1.0.0
 date-released: 2026-05-12
 license: MIT
@@ -32,5 +33,6 @@ references:
     authors:
       - family-names: Bucciarelli
         given-names: Sandro
+    email: sandro.bucciarelli89@gmail.com
     year: 2026
     notes: "Accompanying document; see paper/manifest.pdf in this repository."

@@ -20,6 +20,15 @@
 \usepackage{array}
 \usepackage{xcolor}
 
+% Clickable GitHub links for src/*.py citations (auto-generated)
+\newcommand{\ghrepo}[1]{https://github.com/TerraSignum/#1}
+% \nolinkurl gives a monospace, line-breakable rendering of the
+% short script-stem display text without competing with \href.
+\newcommand{\pyscript}[3]{%
+  \href{\ghrepo{#1}/blob/main/#2}{\nolinkurl{#3}}}
+\newcommand{\repoOwn}{relational-carrier-manifest}
+\newcommand{\pyown}[2]{\pyscript{\repoOwn}{#1}{#2}}
+
 \emergencystretch=3em
 \hbadness=4000
 \Urlmuskip=0mu plus 1mu\relax
@@ -115,11 +124,14 @@ declaration of completeness. Not peer-reviewed. The relational
 carrier theory is a work-in-progress closure construction by an
 independent researcher; the empirical and conceptual claims of
 Papers 1--6 are presented as candidate closures whose external
-validation is the principal next step. \emph{No claim made here
-is novel}: every numerical value, every closure form, every
-falsification handle is sourced to the technical paper that owns
-it. If a sentence in this guide and a sentence in the cited paper
-disagree, the cited paper is authoritative.
+validation is the principal next step. \emph{This guide
+introduces no results of its own}: it is a navigational digest,
+so every numerical value, every closure form, and every
+falsification handle is reproduced from --- and attributed to ---
+the technical paper that derives and owns it. The original
+content lives in Papers 1--6; if a sentence in this guide and a
+sentence in the cited paper disagree, the cited paper is
+authoritative.
 
 \section{One-sentence thesis and short genealogy}
 
@@ -138,6 +150,22 @@ relativity, the Standard-Model fermion-mass-and-mixing
 spectrum, dark-sector phenomenology, and the
 Bekenstein--Hawking entropy $S/A\!=\!1/4$ follow as algebraic
 consequences without additional free parameters.
+
+\paragraph{Guiding principle.} The whole construction can be
+read as a single extremal principle: \emph{physical reality is
+the extremal organisation of realizable distinguishability} ---
+the configuration that extremalises a structural action under
+finite reconstruction resources. This is not a separate
+postulate but a name for the variational backbone the corpus
+already carries: the seven-sector relational action of
+P6~\cite{Paper6} admits a variational principle whose
+stationarity conditions $\delta\mathcal S/\delta(\cdot)\!=\!0$
+slave every field to a deterministic lattice fixed point, and
+the emergent Einstein closure of P4~\cite{Paper4} is
+per-direction Galerkin residual minimisation. The guiding
+principle states what these constructions share; its content
+is exactly those published variational structures, not an
+additional axiom.
 
 \paragraph{Foundational note: relation precedes information.}
 The corpus's architecture instantiates a logical priority that
@@ -169,14 +197,31 @@ $\gamma\!=\!1/(2(d{+}1)),\;
 \esync\!=\!1/(4(d{+}1)),\;
 \bpi\!=\!15/16,\;
 \DOmega\!=\!1\!-\!(N_{\rm gen}d{+}1)/(d^{2}(2 N_{\rm gen}{-}1))$
-(coinciding with $(N_{\rm gen}d{+}1)/(d^{2}(d{+}1))$ at the
-anchor $d{=}4, N_{\rm gen}{=}3$ via the algebraic identity
-$2 N_{\rm gen}{-}1 = d{+}1$; the Cabibbo-class form
-$(2 N_{\rm gen}{-}1)$ is canonical, derived in Paper~4). Both $d$
-and $N_{\rm gen}$ are observationally fixed integer counts of
-discrete-geometric features of the underlying relational
-lattice, not free parameters. The free-parameter count of the
-structural input is therefore zero. The five System-$\Rsys$
+(at the anchor $d{=}4, N_{\rm gen}{=}3$ the subtracted correction
+term is $(N_{\rm gen}d{+}1)/(d^{2}(2 N_{\rm gen}{-}1)) =
+(N_{\rm gen}d{+}1)/(d^{2}(d{+}1)) = 13/80$, the two denominators
+agreeing via the algebraic identity $2 N_{\rm gen}{-}1 = d{+}1$,
+so $\DOmega = 1 - 13/80 = 67/80$; the Cabibbo-class form
+$(2 N_{\rm gen}{-}1)$ is canonical, derived in Paper~4). Both $d$ and $N_{\rm gen}$ are observationally fixed integer
+counts of discrete-geometric features of the underlying
+relational lattice, not free continuous parameters. The count
+of free continuous parameters in the structural input is zero;
+this is what the corpus means by ``no free parameters''. We
+emphasise the qualifier: $d\!=\!4$ and $N_{\rm gen}\!=\!3$
+\emph{are} empirical inputs in the sense that observation of
+our world fixes their values, and the framework does not
+derive these integers from a deeper structure. This corpus is
+a \emph{minimal-input program}: two integer inputs and one
+additional structural anchor (the carrier-action functional
+form $S_{\rm UV}$), all other parameters derived. It is not a
+``zero information input'' programme in the sense of a theory
+that derives spacetime dimensionality and generation count
+from first principles --- that remains a separate analytical
+target. Readers comparing this corpus to ``fully derived''
+fundamental theories should bear this distinction in mind:
+RCT is parameter-free in the continuous sense, not
+input-free in the discrete-geometric sense.
+The five System-$\Rsys$
 rationals are the algebraic backbone of all downstream
 closures.
 
@@ -190,6 +235,23 @@ registered here:
 \S~5);
 \item $\esync = \gamma/2$ (fluctuation--dissipation symmetry;
 P2 \S~5);
+\item $\DOmega = \bpi - \gamma = 15/16 - 1/10 = 67/80$
+(diffusion--projection balance; the closed-form definition of
+$\DOmega$ among the primitives, closed by theorem in
+P6~\cite{Paper6} and the C2 constraint of P2 \S~5);
+\item $2 N_{\rm gen} - 1 = d + 1 = 5$ (Cabibbo-class identity;
+makes the two $\DOmega$ genealogy denominators agree and sets
+the $V_{cb}$ dimensional structure);
+\item $\gamma^{2} = 1/100 = \bigl(2(d{+}1)\bigr)^{-2}$ (the
+universal second-order ``leakage'' scale: it sets the
+$\gamma^{2}$ prefactor of $n_{s}\!=\!1-\gamma^{2}(d{+}N_{\rm gen})/2$,
+the $\gamma^{2}c_{X}$ sub-leading corrections of P4~\cite{Paper4},
+and the $\alpha_\xi^{2}$ vs.\ $\alpha_\xi^{2}(1{-}\gamma^{2})$
+Continuum-Backreaction-Identity ambiguity);
+\item $\axi^{2} = 81/100$ (the variance-reactivity / backreaction
+continuum value: it recurs as the common leg-value of the
+Continuum Backreaction Identity and as the within-$P_5$
+$T_{00}^{\Xi}$ Symanzik asymptote in P4~\cite{Paper4});
 \item $s_{\rm face} = 1/d = 1/4$ (Bekenstein--Hawking entropy
 face, equivalently the inverse-dimension prefactor; P3 L7);
 \item $d + N_{\rm gen} = 7$ (mass-mode dimensional primitive;
@@ -211,6 +273,185 @@ ladder).
 Each identity is a closed-form consequence of the integer
 inputs $(d, N_{\rm gen})$; they are not independent free
 parameters.
+
+% SANDBOX-MOVED 2026-05-16: cross-closure-identities paragraph removed
+% from this manifest pending further physical-foundation analysis.
+% Content preserved at
+%   ../_sandbox_cross_identities/p0_cross_closure_identities_paragraph.tex
+% and ../_sandbox_cross_identities/cross_identity_search_v1.py
+% Reasoning: the 14 collected (4,3)-specific cross-closure rational
+% identities provide a striking algebraic-web cross-check but their
+% physical-foundation status is not yet rigorously established beyond
+% the (d=4, N_gen=3) numeric anchoring. Postpone integration until
+% the underlying common-source mechanism is articulated, to avoid
+% over-claiming structural depth from anchoring-specific arithmetic.
+\iffalse
+\paragraph{Cross-closure algebraic identities at $(d, N_{\rm gen})\!=\!(4, 3)$.}
+\label{par:cross_closure_identities}
+Beyond the primitive--primitive relations above, the
+$(d, N_{\rm gen})\!=\!(4, 3)$ anchoring point realises a dense
+web of \emph{cross-closure} algebraic identities: independent
+closures across the cosmological, electroweak, graph-statistical
+and curvature sectors satisfy small-integer rational relations
+that are valid at the canonical input but not in general
+$(d, N_{\rm gen})$. Four of these are particularly load-bearing:
+\begin{itemize}
+\item $\gamma/(\Lambda_{\rm lat}^{\infty}\!-\!1)\;=\;\lambda_{\infty}
+\;=\;3/8$ \quad
+(universal-leakage primitive
+$\gamma$~\cite{Paper2}, lattice cosmological-constant
+asymptote $\Lambda_{\rm lat}^{\infty}\!=\!19/15$~\cite{Paper4},
+and $(\mathrm{SG})$-axiom spectral gap
+$\lambda_{\infty}\!=\!(d{-}1)/(2d)$~\cite{Paper4}).
+The carrier-defect leakage scale, the departure of the lattice
+cosmological constant from unity, and the spectral gap of the
+weighted Laplacian are interlocked at the algebraic level: any
+two pin the third.
+\item $H_{0}/(100\,{\rm km/s/Mpc})\;-\;\lambda_{\infty}\;=\;
+\gamma\,(d{-}1)\;=\;N_{\rm gen}\gamma\;=\;3/10$ \quad
+(dimensionless Hubble parameter~\cite{Paper4B} and
+$(\mathrm{SG})$-axiom spectral gap).
+\item $H_{0}/(100\,{\rm km/s/Mpc})\;+\;\varepsilon_{\rm sync}^{2}
+\;=\;\frac{2d+N_{\rm gen}(d{+}N_{\rm gen})}{2d(d{+}1)}
+\;=\;\frac{P_{29}}{2d(d{+}1)}\;=\;29/40$ \quad
+(Hubble parameter, fluctuation--dissipation sync-defect, and
+the EW/Yukawa spine integer
+$P_{29}\!=\!2d\!+\!N_{\rm gen}(d{+}N_{\rm gen})\!=\!29$
+that anchors $m_{\mu}/m_{e}\!=\!6000/29$~\cite{Paper3}).
+\item $\lambda_{\infty}\;=\;2\,N_{\rm gen}/2^{d}\;=\;3/8$,
+equivalently $\lambda_{\infty}\!-\!N_{\rm gen}/2^{d}
+\!=\!N_{\rm gen}/2^{d}\!=\!3/16$ \quad
+($(\mathrm{SG})$-axiom related to the
+Clifford-algebra-dimension $\mathrm{Cl}(d)\!=\!2^{d}$ via the
+generation count; the same Clifford-dimension structure
+appears in the
+$T_{00}$ vacuum-branch $S_{4}$ closure
+$1\!-\!N_{\rm gen}/2^{d}\!=\!13/16$
+(par.~\ref{par:rho_carrier_axis_bundle} below cross-references
+in P4~\cite{Paper4}) and in the Bakry--\'Emery curvature-
+dimension cross-projection
+$K^{p_{5}}_{\rm BE}\!=\!\lambda_{\infty}N_{\rm gen}(d{+}N_{\rm gen})/2^{d}
+\!=\!63/128$~\cite{Paper4}).
+\item $V_{us}\;+\;H_{0}/(100\,{\rm km/s/Mpc})
+\;=\;\alpha_{\xi}\;=\;9/10$ \quad
+(Cabibbo angle~\cite{Paper3}, dimensionless Hubble
+parameter~\cite{Paper4B}, and System-$\Rsys$ primitive
+$\alpha_{\xi}$: three closures from electroweak, cosmological,
+and primitive-axis sectors sum to the carrier-axis weight
+because $V_{us}\!=\!\alpha_{\xi}s_{\rm face}$ and
+$H_{0}/(100\,{\rm km/s/Mpc})\!=\!\alpha_{\xi}s_{\rm face}N_{\rm gen}$
+share the prefactor $\alpha_{\xi}s_{\rm face}$ and
+$(N_{\rm gen}\!+\!1)/d\!=\!1$ at the canonical anchoring
+$N_{\rm gen}\!=\!d\!-\!1$).
+\item $\lambda_{\infty}\;+\;s_{\rm face}\;=\;(d{+}1)/(2d)
+\;=\;5/8$ \quad
+\emph{universal in $d$} (independent of $N_{\rm gen}$):
+the $(\mathrm{SG})$-axiom spectral gap and the
+Bekenstein--Hawking entropy face sum to the sync-cone-axis
+fraction of the chirality-doubled spatial dimension. This is
+a property of the integer $d$ alone and the
+$\lambda_{\infty}\!=\!(d{-}1)/(2d)$ definition; it shows
+that the $(\mathrm{SG})$ gap and the BH entropy face are
+algebraically complementary on the chirality-doubled-spatial
+denominator $2d$.
+\item $H_{0}/(100\,{\rm km/s/Mpc})\;=\;\lambda_{\infty}\;+\;s_{\rm face}\;+\;\varepsilon_{\rm sync}^{2}\;=\;27/40$ \quad
+(dimensionless Hubble parameter as the exact additive sum of
+three independent fundamental quantities: the
+$(\mathrm{SG})$-axiom spectral gap
+$\lambda_{\infty}\!=\!3/8$, the Bekenstein--Hawking entropy
+face $s_{\rm face}\!=\!1/4$, and the fluctuation--dissipation
+sync-defect $\varepsilon_{\rm sync}^{2}\!=\!1/20$ from three
+different corpus papers (P4, P3, P2 respectively). The
+arithmetic is exact: $15/40\!+\!10/40\!+\!2/40\!=\!27/40$. The
+identity is realised at the canonical anchoring through the
+specific Hubble closure
+$h\!=\!\alpha_{\xi}s_{\rm face}N_{\rm gen}\!=\!27/40$ and
+relies on the $(4,3)$ integer coincidences; it provides a
+three-route consistency check on the Hubble closure that
+cross-validates each of its three additive summands).
+\item $Y_{p}\;-\;V_{us}\;=\;2\gamma^{2}\;=\;1/50$ \quad
+(BBN primordial-helium fraction
+$Y_{p}\!=\!(d{+}N_{\rm gen})^{2}\gamma^{2}/2\!=\!49/200$~\cite{Paper4B}
+and Cabibbo angle
+$V_{us}\!=\!\alpha_{\xi}s_{\rm face}\!=\!9/40$~\cite{Paper3}
+differ by exactly twice the universal-leakage scale
+$\gamma^{2}$. Three structurally independent sectors --- BBN
+nucleosynthesis, $CKM$ quark mixing, and the universal
+carrier-defect rate --- are linked through a single small
+rational: $49/200\!-\!45/200\!=\!4/200\!=\!2\gamma^{2}$).
+\item $H_{0}/(100\,{\rm km/s/Mpc})\;-\;\sin^{2}\theta_{23}^{\rm PMNS}\;=\;\gamma\;=\;1/10$ \quad
+(dimensionless Hubble parameter and the atmospheric PMNS
+mixing angle
+$\sin^{2}\theta_{23}^{\rm NO}\!=\!1/2\!+\!\alpha_{\xi}/(d\,N_{\rm gen})\!=\!23/40$~\cite{Paper3}
+differ by exactly the universal-leakage primitive
+$\gamma$: $27/40\!-\!23/40\!=\!1/10$. Hubble cosmology
+(P4B) and neutrino oscillations (P3) are interlocked at the
+single-$\gamma$ offset level).
+\item $n_{s}\;-\;\rho(k, k_{\Delta})\;=\;\varepsilon_{\rm sync}^{2}\;=\;1/200$ \quad
+(inflation scalar spectral index
+$n_{s}\!=\!193/200$~\cite{Paper4B} and carrier-axis-bundle
+correlation
+$\rho(k, k_{\Delta})\!=\!24/25\!=\!192/200$
+(par.~\ref{par:cross_closure_identities}, owning paper P4)
+differ by exactly the fluctuation--dissipation sync-defect
+$\varepsilon_{\rm sync}^{2}\!=\!\gamma/2\!=\!1/200$. The
+inflationary observable, the carrier graph statistic, and the
+sync-channel primitive --- three structurally independent
+quantities --- are linked through a single $\varepsilon^{2}$
+offset).
+\item $\Omega_{m}\;-\;\sin^{2}\theta_{W}\;=\;2d\,\gamma^{2}\;=\;8\gamma^{2}\;=\;2/25$ \quad
+(matter-density fraction
+$\Omega_{m}\!=\!47/150$~\cite{Paper4B} and electroweak mixing
+angle
+$\sin^{2}\theta_{W}\!=\!7/30\!=\!35/150$~\cite{Paper3} differ
+by exactly $2d$ times the universal-leakage scale $\gamma^{2}$:
+$47/150\!-\!35/150\!=\!12/150\!=\!2/25\!=\!8\gamma^{2}$. The
+cosmological matter budget and the gauge-mixing angle are
+interlocked at the order-$\gamma^{2}$ level by the
+chirality-doubled-spatial-dimension prefactor $2d$).
+\item $\tfrac{1}{4}\;-\;Y_{p}\;=\;\varepsilon_{\rm sync}^{2}\;=\;1/200$ \quad
+(Bekenstein--Hawking entropy face $s_{\rm face}\!=\!1/d\!=\!1/4$
+~\cite{Paper3}~L7 and BBN primordial-helium fraction
+$Y_{p}\!=\!49/200$~\cite{Paper4B} differ by exactly the
+sync-defect $\varepsilon_{\rm sync}^{2}$: $50/200\!-\!49/200\!=\!1/200$.
+Black-hole entropy and primordial-helium synthesis are linked
+at the sync-defect level, the same $\varepsilon^{2}$ that
+appears in the $n_{s}\!-\!\rho$ offset above and that closes
+the $H_{0}$ three-summand identity).
+\item $\Omega_{\Lambda}\;+\;\sin^{2}\theta_{W}\;-\;Y_{p}\;=\;H_{0}/(100\,{\rm km/s/Mpc})\;=\;27/40$ \quad
+(dark-energy fraction
+$\Omega_{\Lambda}\!=\!103/150$~\cite{Paper4B}, electroweak
+mixing angle $\sin^{2}\theta_{W}\!=\!7/30$~\cite{Paper3}, and
+BBN primordial-helium fraction
+$Y_{p}\!=\!49/200$~\cite{Paper4B} combine to the dimensionless
+Hubble parameter:
+$412/600\!+\!140/600\!-\!147/600\!=\!405/600\!=\!27/40$. Three
+empirically and theoretically independent sectors --- late-time
+dark-energy density, electroweak gauge mixing, and BBN
+nucleosynthesis --- close on the cosmological Hubble parameter
+through an exact small-integer rational combination at the
+$(4, 3)$ anchoring point).
+\item $Y_{p}\;+\;\sin^{2}\theta_{23}^{\rm PMNS}\;-\;\sigma_{8}^{2}\;=\;\gamma^{2}\;=\;1/100$ \quad
+(BBN primordial-helium fraction $Y_{p}\!=\!49/200$,
+atmospheric PMNS angle $\sin^{2}\theta_{23}\!=\!23/40$, and
+matter-power amplitude squared $\sigma_{8}^{2}\!=\!\alpha_{\xi}^{2}\!=\!81/100$
+sum to the universal-leakage scale squared:
+$49/200\!+\!115/200\!-\!162/200\!=\!2/200\!=\!1/100\!=\!\gamma^{2}$.
+The BBN, neutrino-oscillation, and structure-formation sectors
+collapse to the carrier-defect rate squared).
+\end{itemize}
+These identities are \emph{not} universal in
+$(d, N_{\rm gen})$: each relies on a specific integer
+coincidence at the canonical anchoring (e.g.\
+$N_{\rm gen}\!=\!d\!-\!1$, $2^{d}\!=\!d^{2}\!=\!16$,
+$2N_{\rm gen}\!-\!1\!=\!d\!+\!1$). Their simultaneous
+realisation is itself a structural feature of the
+$(4,3)$ choice and a registered cross-corpus consistency
+check: the cosmological, electroweak, $(\mathrm{SG})$-spectral
+and curvature sectors all interconnect through small-integer
+rationals at the empirically observed integer pair.
+\fi
+% END SANDBOX-MOVED cross-closure-identities block.
 
 \section{Three load-bearing claims}
 \label{sec:pillars}
@@ -248,7 +489,7 @@ operating in two distinct relational regimes:
 \paragraph{Vacuum branch.} Pre-chirality-flip configuration
 ($\theta_{\rm chir}\!=\!0$, canonical
 $(\axi,\gamma)\!=\!(9/10,1/10)$). Governs the electroweak-scale
-closure ($v_{\rm EW}\!=\!246.22$~GeV via P1~\cite{Paper1}'s
+closure ($v_{\rm EW}\!=\!246.2186$~GeV via P1~\cite{Paper1}'s
 four-path consensus), the inflation-era and recombination-era
 observables ($n_{s}, A_{s}, z_{*}, \theta_{*}$), and the
 late-time dark-energy equation of state at leading order
@@ -290,9 +531,9 @@ Paper & Title (short) & Role in the corpus \\
 P0 (this doc.) & Reader's guide & Entry-point, claim grammar,
                                   corpus map, falsifiers \\
 P1~\cite{Paper1} & Hierarchy-bridge electroweak-scale closure
-                                & $v_{\rm EW}\!=\!246.22$~GeV
+                                & $v_{\rm EW}\!=\!246.2186$~GeV
                                   four-path consensus,
-                                  $|g|_{\rm MS}\!=\!1.42$,
+                                  $|g|_{\overline{\rm MS}}\!=\!1.4187$,
                                   HBR + $\theta_{em}\!=\!\pi$
                                   load-bearing input to P4 \\
 P2~\cite{Paper2} & Causal-wave landings + System-$\Rsys$ readout
@@ -377,6 +618,30 @@ algebraically; numerical match secondary
 (e.g.\ $\Sigma_{f}Y_{f}^{2}\!=\!10$).
 \end{itemize}
 
+\paragraph{Terminological disclaimer on the word ``EXACT''.}
+Throughout this corpus the labels EXACT, PRECISE and FACTOR2
+are \emph{band labels}, not claims of mathematical equality.
+EXACT here means ``the framework value lies inside the
+indicated relative-residual band against the external
+anchor''; a 1\% residual against an experimental measurement
+is not exact in the mathematical sense of $a = b$ in
+$\mathbb Q$. Where the corpus does report a true algebraic
+identity in $\mathbb Q$ (e.g.\ $\alpha_\xi/2 - 2\gamma = 1/4$
+for $S_{\rm BH}/A$, or
+$\Sigma_{f}Y_{f}^{2}\!=\!10$ for the
+hypercharge-squared sum rule), the closure is flagged as
+\textbf{STRUCTURAL\_CLOSED} or written with the explicit
+identity symbol $\equiv$ in the body text. Readers comparing
+the corpus against algebraic-identity theories (e.g.\
+representation-theoretic constructions in $\mathbb Q$) should
+treat EXACT-band labels as ``Tier-1 closure within band'',
+not as algebraic identities.
+
+We use Tier-1 / Tier-2 / Tier-3 interchangeably with EXACT /
+PRECISE / FACTOR2; the Tier-$k$ vocabulary is preferred when
+the rhetoric of EXACT could mislead an external reader who
+expects mathematical equality.
+
 \paragraph{Paper-specific EXACT cuts.} The corpus uses
 three EXACT cuts depending on the observable class. The
 present routing table makes them explicit so a reader
@@ -449,8 +714,12 @@ re-states them in one place.
 \renewcommand{\arraystretch}{1.18}
 \begin{longtable}{@{}p{0.17\textwidth} p{0.25\textwidth} p{0.18\textwidth} p{0.16\textwidth} p{0.07\textwidth}@{}}
 \caption{Top-tier corpus closures, one row per observable.
-``Tier'' is the precision class against the external anchor
-(EXACT $\le 1\%$, PRECISE $\le 2.5\%$, FACTOR2 within $2\times$).
+``Tier'' is the precision class against the external anchor:
+\textbf{EXACT} ($\equiv$\,Tier-1; $|r| \le 1\%$),
+\textbf{PRECISE} ($\equiv$\,Tier-2; $|r| \le 2.5\%$),
+\textbf{FACTOR2} ($\equiv$\,Tier-3; within $2\times$). All three
+are band labels, not claims of mathematical equality; see the
+terminological disclaimer in Sec.~\ref{sec:grammar}.
 ``Class'' is the load-bearing classification of
 Section~\ref{sec:grammar}. Rows marked \emph{load-bearing} are
 components of the three load-bearing blocks
@@ -482,15 +751,19 @@ $n_{s}$ & $1-7\gamma^{2}/2$ & EXACT & downstream & P4B \\
 $A_{s}$ & $21\gamma^{10}$ & EXACT & downstream & P4B \\
 $z_{*}$ & $(2d{+}1)(2d{+}N_{\rm gen})^{2}\!+\!{\rm sub}$ & EXACT & downstream & P4B \\
 $Y_{p}$ & $49\gamma^{2}/2$ & EXACT & downstream & P4B \\
-$\Sigma m_{\nu}$ & $\gamma^{2}m_{3}\!+\!m_{2}\!+\!m_{3}\!\simeq\!0.060$ eV & PRECISE & downstream & P6 \\
+$\Sigma m_{\nu}$ (NH-min, dressed) & $m_{2}^{\rm dr}\!+\!m_{3}^{\rm dr}\!=\!0.0588$ eV; seesaw refinement $\gamma^{2}m_{3}\!+\!m_{2}\!+\!m_{3}\!\simeq\!0.0593$ eV & EXACT & downstream & P4B \\
+$m_{3}^{(\nu)}$ atmospheric & $m_{e}\gamma^{d+3}(1\!-\!\gamma^{2}(d{+}N_{\rm gen})/4)\!=\!0.0502$ eV & EXACT & downstream & P4B \\
+$m_{2}^{(\nu)}$ solar & $m_{e}\gamma^{d+4}(\pi/2)(1\!+\!\gamma^{2}(d{+}N_{\rm gen}))\!=\!0.00859$ eV & EXACT & downstream & P4B \\
+$\eta_{B}$ & $(d{+}N_{\rm gen})^{2}\gamma^{10}/(2d)\!=\!49/(8\!\cdot\!10^{10})$ & PRECISE & downstream & P4B \\
+$D/H$ & $(d{+}1)\gamma^{5}/2\,(1\!+\!\gamma^{2}(d{+}N_{\rm gen})/4)\!=\!2.544\!\times\!10^{-5}$ & EXACT & downstream & P3 \\
 \midrule
 \multicolumn{5}{c}{\textit{Electroweak \& Standard Model}} \\
-$v_{\rm EW}$ & 4-path consensus $246.22$ GeV & PRECISE & load-bearing input & P1 \\
+$v_{\rm EW}$ & 4-path consensus $246.2186$ GeV & PRECISE & load-bearing input & P1 \\
 $\alpha_{\rm EM}$ & $\gamma^{2}\axi^{N_{\rm gen}}\!=\!729/100{,}000$ & EXACT & downstream & P3 \\
 $\sin^{2}\theta_{W}$ & $1/d - \gamma/(2N_{\rm gen})\!=\!7/30$ & PRECISE & downstream & P3 \\
 $V_{us}$ & $\axi\,s_{\rm face}\!=\!9/40$ & EXACT & downstream & P3 \\
 $m_{t}$ & spectral Yukawa eigenvalue $\to 174.1$ GeV & EXACT & downstream & P3 \\
-$m_{\mu}/m_{e}$ & spectral Yukawa chirality split $\to 206.0$ & EXACT & downstream & P3 \\
+$m_{\mu}/m_{e}$ & $400 N_{\rm gen}(d{+}1)/P_{29}\!=\!6000/29\!=\!206.897$ & EXACT & downstream & P3 \\
 $a_{\mu}^{\rm Schwinger}$ & $\alpha_{\rm EM}/(2\pi)$ & PRECISE & downstream & P3 \\
 \midrule
 \multicolumn{5}{c}{\textit{Gravity \& black-hole sector}} \\
@@ -513,7 +786,9 @@ Vortex-DM $w_{\rm DM}$ & $0$ (integer-quantised winding) & STRUCTURAL & downstre
 10 causal-wave landings & 47 forms / $\sim\!174$k searched & EXACT & load-bearing & P2 \\
 Loop-class library & topology-labelled protocol & STRUCTURAL & load-bearing & P3 \\
 $\sum_{f}Y_{f}^{2}\!=\!10$ & three-generation chiral content & EXACT & downstream & P6 \\
-$\bar\theta_{\rm QCD}\!=\!0$ & APS-chirality pairing & STRUCTURAL & downstream & P4A \\
+$\bar\theta_{\rm QCD}\!=\!0$ & charge-neutral vortex/antivortex condensate (P4 + P4D + P3 chirality-pair) & STRUCTURAL & downstream & P4D \\
+Emergent causal time / $3{+}1$ Lorentz layer & causal partial order on $\Xi$-paths $+$ massless transport light cone; $d_{\rm spatial}\!=\!3$, $d_{\rm spacetime}\!=\!4$, $f_{\rm LC}\!=\!\log_{2}(9/8)\!=\!0.169925$ & STRUCTURAL & supporting & P4 \\
+Emergent UV time $t$ (Page--Wootters) & $t$ = Fiedler-mode-phase clock eigenvalue of $\Xi$-Laplacian; $\hat C|\Psi\rangle\!=\!0$ Wheeler--DeWitt constraint & STRUCTURAL & supporting & P6 \\
 \bottomrule
 \end{longtable}
 \setlength{\tabcolsep}{6pt}
@@ -584,8 +859,9 @@ distance-ladder-systematic attribution of the SH0ES
 $73.04\!\pm\!1.04$ discrepancy.
 \item \emph{Tensor-to-scalar ratio $r$ vs CMB-S4.} The
 framework predicts $r\!\sim\!\gamma^{3}(d{+}N_{\rm gen})\!\simeq\!7\!\times\!10^{-3}$
-within the BICEP/Keck BK18 upper bound
-$r_{0.05}\!<\!0.036$~\cite{BICEPKeck2021}. CMB-S4 sensitivity
+within the end-of-2025 Planck--SPT--ACT--BICEP/Keck--DESI 95\% bound
+$r\!<\!0.034$~\cite{Balkenhol2025} (subsuming the earlier BK18 bound
+$r_{0.05}\!<\!0.036$~\cite{BICEPKeck2021}). CMB-S4 sensitivity
 $\sigma(r)\!\sim\!10^{-3}$ within $\sim\!3$ years will provide
 a definitive detection or upper-bound test.
 \end{enumerate}
@@ -620,6 +896,151 @@ prospective cluster registry --- the file
 in the loop-class repo --- that pre-registers three
 loop-class observables for future $\Rsys$-falsification
 opportunities at the P3 protocol level.
+
+\paragraph{Composition theorem conditionality: the
+$(\mathrm{SG})$ axiom.}
+The composition theorem of P6~\cite{Paper6} states that
+$(M1)$, $(M2)$, $(M4)$ are unconditional theorems of the cited
+papers, while $(M3)$ --- the emergent-Einstein closure --- is
+\emph{conditionally rigorous} on three inputs: (i) the eight
+admissibility conditions $A_{1}$--$A_{8}$ on the carrier
+sequence, (ii) the discharge-table implication
+$(A_{5})\!+\!(A_{6})\!\Rightarrow\!CD(K_{\mathrm{CD}},N)$ open at
+theorem level in P4, and (iii) the empirical Symanzik asymptotes
+underlying the Continuum Backreaction Identity
+($T_{00}^{\Xi}$ leg $R^{2}\!=\!0.54$, auxiliary
+$G_{00,\mathrm{med}}\!\to\!0$ at $R^{2}\!=\!0.99$). The P6
+sharpening reduces (i) to a \emph{single} structural axiom:
+the uniform spectral gap $(\mathrm{SG})$ on the $\xi_{N}$-weighted
+normalised graph Laplacian, with conjectured asymptote
+$\lambda_{\infty}\!=\!3/8\!=\!(d{-}1)/(2d)$. The axiom is
+\emph{empirically certified} ($10$-regime ladder, $184$ seeds,
+Symanzik-$1$ asymptote $0.3789$ at $1.0\%$ relative residual to
+$3/8$) but \emph{not analytically discharged}. A GPU
+decomposition study (P4 Prop.\ Statistical-fingerprint, 2026)
+further reduces the open analytical question to a concrete
+graph-theoretic statement: the spectral gap of the
+Newman-clustered ensemble with the carrier's empirical
+(degree, triangle) distribution equals $7/24$ at $+0.36\%$ relative
+residual --- and \emph{only} this ensemble reproduces the
+carrier asymptote (Erd\H{o}s--R\'enyi, configuration model,
+random-regular, and Watts--Strogatz all miss by $-40$ to $+66\%$).
+The corresponding analytical tool is the cavity / resolvent
+method for sparse networks with triangles; the remaining
+Step-$4$ deliverable is therefore concretely the closed-form
+cavity fixed-point solution for the carrier's clustered-degree
+distribution. \emph{Falsification handle}: any rigorous proof
+that the carrier-clustered-graph cavity solution does \emph{not}
+yield $7/24$, or any tightened empirical measurement that excludes
+$3/8$ on a $\Rsys$-aware ladder at $\geq\!5\sigma$, would close
+the axiom against the framework rather than for it.
+
+\paragraph{Physical mechanism of the corpus closures.}
+\label{par:mechanism_status_cross_projection}
+Each closure of the corpus is classified along two independent
+axes: a \emph{numerical-precision tier} (EXACT / PRECISE /
+FACTOR2; the closure-grammar registry above) and a
+\emph{physical-mechanism status} (rigorous derivation, physical
+plausibility argument, or open). Every numerical landing in
+the corpus comes with either a rigorous physical derivation or
+a concrete plausibility argument connecting the System-$\Rsys$
+form to the observable; no closure is registered as
+purely numerical without physical reading.
+
+A subset of the closures admit no single-route derivation but
+are nonetheless established by a \emph{cross-projection
+argument}: two or more independent in-corpus chains connect to
+the observable through standard physics, and their numerical
+predictions converge at the PRECISE tier. The three cosmological
+and geometric closures listed below are of this kind.
+
+\begin{itemize}
+\item \emph{Local Hubble constant
+$H_{0}\!=\!67.5$~km/s/Mpc}. The dimensionless reading
+$h\!:=\!H_{0}/(100\,\mathrm{km/s/Mpc})\!=\!
+\alpha_{\xi}\,s_{\rm face}\,N_{\rm gen}\!=\!27/40$ from the
+carrier-side product is also delivered by the standard
+Friedmann equation at $z\!=\!0$, with the framework's
+independent dressing of $\rho_{\Lambda}$~\cite{Paper4B} and
+its closure $\Omega_{\Lambda}\!=\!1-\Omega_{m}\!=\!103/150$
+as inputs. The carrier-side route gives $67.50$ and the
+Friedmann route $66.93$; the two converge at $0.85\%$
+relative residual, each within Planck~2018 $1\sigma$ of the
+empirical $67.4\!\pm\!0.5$.
+\item \emph{Lattice cosmological-constant asymptote
+$\Lambda_{\rm lat}^{\infty}\!=\!19/15$}. The operator-side
+decomposition $17/20\!+\!5/12$ (non-scalar Clifford-channel
+reaction rate plus spinor-trace--generation correction,
+\cite{Paper4}) is algebraically equivalent to the carrier-side
+decomposition
+$1\!+\!d/((d{+}1)N_{\rm gen})\!=\!1\!+\!4/15$
+(trivial unit carrier-baseline plus per-generation
+chirality-spin defect distributed over the sync-extended cone
+bundle). Two independent physical projections of the same
+limit, agreeing identically at $19/15$.
+\item \emph{Curvature-dimension lower bound
+$\mathrm{CD}(K_{\rm CD}\!\geq\!0, N)$}. Three independent
+Bakry--\'Emery percentile statistics each match a
+$\lambda_{\infty}\!\times\!(d, N_{\rm gen})$-rational ---
+$K_{p_{1}}\!=\!\lambda_{\infty}(d{+}1)/d\!=\!15/32$ at
+$0.19\%$ residual,
+$K_{p_{5}}\!=\!\lambda_{\infty}N_{\rm gen}(d{+}N_{\rm gen})/2^{d}
+\!=\!63/128$ at $0.04\%$ residual,
+$K^{\rm mean}\!=\!\lambda_{\infty}(4d{+}1)/(2d{+}N_{\rm gen})
+\!=\!51/88$ at $0.10\%$ residual. The three-fold convergence
+identifies the Bakry--\'Emery curvature distribution as a
+structural function of the $(\mathrm{SG})$-axiom
+$\lambda_{\infty}$ and the integer inputs $(d, N_{\rm gen})$,
+extending the qualitative Ollivier--Lin--Lu--Yau corollary
+$K_{\rm CD}\!\geq\!0$ to a quantitative cross-projection.
+\end{itemize}
+
+The cross-projection arguments are not stand-alone derivations:
+each identity rests on standard physics
+(Friedmann; Bakry--\'Emery $\Gamma_{2}$-calculus;
+algebraic-decomposition equivalence) plus the framework's
+prior closures of the routes' inputs. The load-bearing
+evidence is the empirical convergence of two or more
+independent in-corpus chains at residuals of $0.04$--$0.85\%$,
+all inside the bootstrap $95\%$ confidence intervals of the
+corresponding empirical measurements. The single remaining
+mechanism conditionality of the corpus is therefore the
+discharge of the $(\mathrm{SG})$ axiom
+$\lambda_{\infty}\!=\!3/8$ itself: a closed-form derivation
+would, via the cross-projection chains above, simultaneously
+deliver rigorous physical mechanisms for all three closures
+of this kind.
+
+\paragraph{Statistical multiplicity / look-elsewhere.}
+The corpus reports many closures, which invites a
+look-elsewhere objection. The defence does \emph{not} rest on
+post-hoc $p$-value-inflation corrections; it rests on five
+structural features that a random-search artefact would not
+exhibit. \emph{(i)~Dependency graph}: the closures are not
+independent fits but a directed graph rooted in the two
+integers $(d, N_{\rm gen})$ --- every System-$\Rsys$ rational
+is a fixed algebraic function of those two inputs, so the
+effective number of free choices is two, not the number of
+closures. \emph{(ii)~Frozen readouts}: the five carrier
+coefficients are read off a bounded-operator construction
+(P2~\cite{Paper2}) once and then frozen; no downstream closure
+re-tunes them. \emph{(iii)~Negative controls}: the loop-class
+protocol (P3~\cite{Paper3}) has explicit forbidden classes and
+a closure domain outside which the protocol is \emph{required}
+to fail, and several candidate identifications have been
+falsified on those controls rather than retained.
+\emph{(iv)~Prospective registries}: P3 pre-registers
+loop-class observables (\path|prospective_cluster_registry.json|)
+before their external values enter the closure, converting them
+from fits into predictions. \emph{(v)~No target-fitting}: the
+System-$\Rsys$ forms carry no fitted parameter --- the
+admissible alphabet and the formula-search audit of
+P2~\cite{Paper2} are disclosed, and a closure either lands on a
+System-$\Rsys$ rational or it does not. A look-elsewhere
+artefact would require all five to hold by coincidence; the
+framework is therefore best contested through the registered
+falsification handles above, not through a multiplicity
+correction on a closure count.
 
 \section{Where to read next}
 \label{sec:routing}
@@ -683,7 +1104,7 @@ more.
 The reproducibility package
 (\url{https://github.com/TerraSignum/relational-carrier-manifest}) bundles all
 input data files (under \path|data/|), reproducer scripts
-(\path|src/verify_*.py| and \path|src/make_figures.py|), and
+(\path|src/verify_*.py| and \pyscript{causal-wave-landings-repro}{src/make_figures.py}{make_figures}), and
 unit tests (\path|tests/|). Cryptographic provenance is provided by
 \path|data/SHA256SUMS| (GNU \texttt{sha256sum -c} compatible),
 and the publication-prep frozen state is documented in
@@ -772,6 +1193,15 @@ P.~A.~R.~Ade \textit{et al.} (BICEP/Keck Collaboration),
 using Planck, WMAP, and BICEP/Keck observations through the
 2018 observing season} (BK18),
 Physical Review Letters \textbf{127}, 151301 (2021); arXiv:2110.00483.
+
+\bibitem{Balkenhol2025}
+L.~Balkenhol \textit{et al.},
+\emph{Inflation at the End of 2025: Constraints on $r$ and $n_s$
+Using the Latest CMB and BAO Data},
+arXiv:2512.10613 (December 2025).
+Combined Planck--SPT--ACT--BICEP/Keck + DESI BAO analysis;
+$n_{s}\!=\!0.9682\!\pm\!0.0032$ (CMB only),
+$0.9728\!\pm\!0.0029$ with BAO; 95\% C.L. upper bound $r\!<\!0.034$.
 
 \bibitem{LZ2024}
 J.~Aalbers \textit{et al.} (LUX-ZEPLIN Collaboration),

@@ -912,11 +912,30 @@ underlying the Continuum Backreaction Identity
 $G_{00,\mathrm{med}}\!\to\!0$ at $R^{2}\!=\!0.99$). The P6
 sharpening reduces (i) to a \emph{single} structural axiom:
 the uniform spectral gap $(\mathrm{SG})$ on the $\xi_{N}$-weighted
-normalised graph Laplacian, with conjectured asymptote
-$\lambda_{\infty}\!=\!3/8\!=\!(d{-}1)/(2d)$. The axiom is
-\emph{empirically certified} ($10$-regime ladder, $184$ seeds,
-Symanzik-$1$ asymptote $0.3789$ at $1.0\%$ relative residual to
-$3/8$) but \emph{not analytically discharged}. A GPU
+normalised graph Laplacian, with branched asymptotes
+$\lambda_{\infty}^{(\rm vac)}\!=\!3/8\!=\!(d{-}1)/(2d)$ (vacuum,
+Bayesian posterior $0.908$ on the $N \leq 100$ ladder) and
+$\lambda_{\infty}^{(\rm mat)}\!=\!79/200\!=\!3/8\!+\!d\gamma^{2}/2$
+(matter-stable, $256\leq N \leq 600$, $-0.16\%$ relative residual,
+Bayes-factor $S_{2}/S_{1}\!=\!0.999$). Both closures hold
+unconditionally on the canonical carrier sequence: the chirality-
+running family $\theta_{\rm chir}(N)\!=\!\arctan(N_{\rm gen}^{2x-1})$
+with $x\!=\!\ln(N/N_{\rm canonical})/\ln(d N_{\rm gen})$
+(P4B~\cite{Paper4B}). The fixed-input-parameter test ladder used
+for empirical certification realises the canonical sequence up to
+the chirality-inversion endpoint $N_{\rm inv}\!=\!d N_{\rm gen} N_{\rm canonical}\!=\!600$;
+extension of the empirical certification to higher $N$ requires
+the standard lattice-continuum parameter rescaling that preserves
+$\theta_{\rm chir}$ on its canonical trajectory. The fixed-parameter
+$N > N_{\rm inv}$ regime exits the canonical sequence (chirality
+saturates at $\arctan(N_{\rm gen})$, lattice exhibits uniform
+$\xi$-densification with a drifting non-asymptotic spectral gap;
+P4~\cite{Paper4}~Remark~\texttt{rmk:longer\_iter\_accelerating}) and
+is a numerical artefact of fixed-parameter ladder construction,
+not a falsification of the $(\mathrm{SG})$ axiom. The
+astrophysical and cosmological observable scales of the corpus
+realise the canonical sequence and are unaffected. Neither
+branch is analytically discharged at theorem level. A GPU
 decomposition study (P4 Prop.\ Statistical-fingerprint, 2026)
 further reduces the open analytical question to a concrete
 graph-theoretic statement: the spectral gap of the
